@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclaire — Fashion Wanita Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@200;300;400;500;600&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+
+:root{
+  /* Pink Nude Palette */
+  --ink:#f8f0f5;           /* Super soft pink nude background */
+  --ink2:#f1e6ec;          /* Slightly deeper pink nude */
+  --off:#333;              /* Dark text for contrast */
+  --warm:#f5d0d8;         /* Warm pink nude */
+  --paper:#fdf2f7;        /* Creamy pink nude */
+  --gold:#d4a5a0;         /* Metallic pink nude */
+  --gold2:#c1968f;        /* Deeper pink nude */
+  --blush:#e6b5c0;        /* Blush pink */
+  --copper:#d48a9c;       /* Pink nude with hint of copper */
+  --rose:#e89bb0;         /* Soft rose */
+  --cream:#fdf2f7;        /* Cream pink */
+  --muted:#888;           /* Muted gray */
+  --light-muted:#d4a5a0;  /* Light pink nude */
+  
+  /* Typography */
+  --ff-head:'Playfair Display',Georgia,serif;
+  --ff-body:'Barlow',sans-serif;
+  --ff-cond:'Barlow Condensed',sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+
+body{font-family:var(--ff-body);background:var(--ink);color:var(--off);overflow-x:hidden;line-height:1.6;cursor:none}
+
+/* Custom cursor */
+#cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(212,165,160,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .12s var(--ease);mix-blend-mode:normal}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold2);border-radius:99px}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 5%;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  mix-blend-mode:normal;
+  transition:background .4s;
+}
+#nav.filled{background:rgba(248,240,245,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,165,160,.12)}
+.nav-logo{
+  font-family:var(--ff-head);font-size:1.3rem;font-weight:700;
+  color:var(--off);text-decoration:none;letter-spacing:.04em;
+}
+.nav-logo em{font-style:italic;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.5rem}
+.nav-links a{font-family:var(--ff-cond);font-size:.75rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(51,51,51,.45);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{
+  font-family:var(--ff-cond);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:#fff;background:var(--rose);
+  padding:.5rem 1.4rem;border-radius:2px;border:none;cursor:none;text-decoration:none;
+  transition:background .25s,transform .2s var(--ease);
+}
+.nav-cta:hover{background:var(--gold);transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+  background:var(--ink2);
+}
+
+.hero-split{
+  display:grid;grid-template-columns:1fr 1fr;
+  width:100%;min-height:100vh;
+}
+
+.hero-left{
+  position:relative;
+  background:linear-gradient(160deg,#f1e6ec 0%,#f5d0d8 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:10rem 5% 5rem;
+  overflow:hidden;
+}
+.hero-left-pattern{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg,rgba(212,165,160,.1) 0,rgba(212,165,160,.1) 1px,transparent 0,transparent 50%);
+  background-size:24px 24px;
+}
+.hero-left-num{
+  position:absolute;top:6rem;left:5%;
+  font-family:var(--ff-cond);font-size:.7rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(212,165,160,.6);
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-left-num::after{content:'';flex:1;height:1px;background:rgba(212,165,160,.3);max-width:60px}
+
+.hero-label{
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.hero-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+
+.hero-h1{
+  font-family:var(--ff-head);
+  font-size:clamp(3rem,6vw,5.5rem);
+  font-weight:900;
+  line-height:.95;
+  color:var(--off);
+  margin-bottom:1.8rem;
+}
+.hero-h1 em{font-style:italic;color:var(--rose);display:block}
+.hero-h1 span{display:block;font-weight:400;font-size:.7em;color:rgba(51,51,51,.4);letter-spacing:.06em}
+
+.hero-desc{
+  font-family:var(--ff-body);font-weight:300;font-size:.9rem;
+  color:rgba(51,51,51,.5);line-height:1.85;
+  max-width:360px;margin-bottom:2.4rem;
+  border-left:1px solid rgba(212,165,160,.2);padding-left:1.2rem;
+}
+
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  font-family:var(--ff-cond);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--rose);color:#fff;
+  padding:.8rem 2rem;border-radius:2px;border:none;cursor:none;text-decoration:none;
+  transition:all .25s var(--ease);display:inline-block;
+}
+.btn-primary:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ghost{
+  font-family:var(--ff-cond);font-size:.78rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(51,51,51,.5);border:1px solid rgba(212,165,160,.15);
+  padding:.8rem 2rem;border-radius:2px;cursor:none;text-decoration:none;
+  transition:all .25s;display:inline-block;
+}
+.btn-ghost:hover{color:var(--off);border-color:rgba(212,165,160,.35)}
+
+.hero-stats{
+  position:absolute;bottom:4rem;right:-1px;
+  display:flex;flex-direction:column;gap:.5rem;
+  z-index:2;
+}
+.stat-pill{
+  background:rgba(248,240,245,.7);backdrop-filter:blur(12px);
+  border:1px solid rgba(212,165,160,.15);border-right:none;
+  padding:.7rem 1.2rem .7rem 1.4rem;
+  display:flex;align-items:baseline;gap:.5rem;
+  border-radius:2px 0 0 2px;
+}
+.stat-pill .v{font-family:var(--ff-head);font-size:1.3rem;font-weight:700;color:var(--rose);line-height:1}
+.stat-pill .l{font-family:var(--ff-cond);font-size:.62rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(51,51,51,.35)}
+
+.hero-right{
+  position:relative;overflow:hidden;
+  background:var(--ink);
+}
+.hero-right-img{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#f1e6ec,#f5d0d8);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-right-img img{width:100%;height:100%;object-fit:cover;opacity:.65;mix-blend-mode:luminosity}
+.hero-right-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(248,240,245,.4) 0%,transparent 30%,transparent 70%,rgba(248,240,245,.2) 100%),
+             linear-gradient(to bottom,rgba(248,240,245,.3) 0%,transparent 30%,transparent 60%,rgba(248,240,245,.5) 100%);
+}
+
+/* editorial text layers on right */
+.hero-right-label{
+  position:absolute;top:7rem;right:5%;
+  font-family:var(--ff-cond);font-size:.65rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(212,165,160,.5);writing-mode:vertical-rl;text-orientation:mixed;
+}
+.hero-price-tag{
+  position:absolute;bottom:5rem;left:5%;right:5%;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;
+}
+.price-now-big{
+  font-family:var(--ff-head);font-size:3.5rem;font-weight:900;color:var(--off);line-height:1;
+}
+.price-was{font-family:var(--ff-cond);font-size:.78rem;letter-spacing:.1em;color:rgba(51,51,51,.3);text-decoration:line-through;margin-bottom:.3rem}
+.price-badge{
+  background:var(--rose);color:#fff;
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:600;letter-spacing:.14em;
+  padding:.35rem .9rem;border-radius:1px;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap{
+  background:var(--rose);overflow:hidden;
+  padding:.55rem 0;
+}
+.marquee-belt{display:flex;white-space:nowrap;animation:mar 22s linear infinite}
+.marquee-belt:hover{animation-play-state:paused}
+.mseg{
+  display:inline-flex;align-items:center;gap:0;
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:#fff;padding:0 2rem;flex-shrink:0;
+}
+.mdot{color:rgba(255,255,255,.3);margin:0 1rem;font-size:.5rem}
+@keyframes mar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── PRODUCTS SECTION ── */
+#products{
+  padding:6rem 5%;
+  background:var(--ink2);
+}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap;
+}
+.sec-eyebrow{
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.7rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.sec-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.sec-title{
+  font-family:var(--ff-head);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;
+  color:var(--off);line-height:1.05;
+}
+.sec-title em{font-style:italic;color:var(--rose)}
+.sec-desc{
+  font-family:var(--ff-body);font-weight:300;font-size:.88rem;
+  color:rgba(51,51,51,.4);line-height:1.8;max-width:320px;text-align:right;
+}
+
+/* Product grid — asymmetric */
+.products-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:2px;
+}
+.prod{
+  position:relative;overflow:hidden;
+  background:var(--ink);cursor:none;
+}
+.prod-tall{grid-row:span 2}
+.prod-img{
+  width:100%;height:100%;min-height:280px;
+  background:linear-gradient(135deg,#f1e6ec,#f5d0d8);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  transition:transform .6s var(--ease);
+}
+.prod-tall .prod-img{min-height:520px}
+.prod:hover .prod-img{transform:scale(1.04)}
+.prod-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.7;transition:opacity .4s}
+.prod:hover .prod-img img{opacity:.9}
+.prod-placeholder{
+  font-family:var(--ff-head);font-style:italic;font-size:.9rem;
+  color:rgba(212,165,160,.2);letter-spacing:.1em;z-index:1;
+}
+.prod-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(248,240,245,.8) 0%,rgba(248,240,245,.1) 60%,transparent 100%);
+  z-index:2;
+}
+.prod-info{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:1.4rem;z-index:3;
+}
+.prod-cat{
+  font-family:var(--ff-cond);font-size:.6rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.prod-name{
+  font-family:var(--ff-head);font-size:1rem;font-style:italic;font-weight:400;
+  color:var(--off);line-height:1.2;margin-bottom:.5rem;
+}
+.prod-tall .prod-name{font-size:1.3rem}
+.prod-price{
+  font-family:var(--ff-cond);font-size:.8rem;font-weight:600;letter-spacing:.08em;
+  color:rgba(51,51,51,.5);
+}
+.prod-price b{color:var(--rose);font-weight:600}
+.prod-tag{
+  position:absolute;top:1rem;left:1rem;z-index:3;
+  font-family:var(--ff-cond);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--rose);color:#fff;
+  padding:.25rem .75rem;border-radius:1px;
+}
+
+/* ── STORY / BRAND ── */
+#story{
+  padding:8rem 5%;
+  background:var(--paper);
+  color:var(--ink);
+  position:relative;overflow:hidden;
+}
+.story-pattern{
+  position:absolute;inset:0;
+  background-image:radial-gradient(rgba(212,165,160,.1) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.story-inner{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:6rem;align-items:center;position:relative;
+}
+.story-left{}
+.story-label{
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.story-label::before{content:'';width:24px;height:1px;background:var(--copper)}
+.story-h{
+  font-family:var(--ff-head);font-size:clamp(2rem,4vw,3rem);font-weight:900;
+  color:var(--ink);line-height:1.05;margin-bottom:1.5rem;
+}
+.story-h em{font-style:italic;color:var(--rose)}
+.story-body{
+  font-family:var(--ff-body);font-weight:300;font-size:.9rem;
+  color:rgba(51,51,51,.6);line-height:1.9;margin-bottom:2rem;
+}
+.story-pillars{
+  display:flex;flex-direction:column;gap:.8rem;
+  border-top:1px solid rgba(51,51,51,.1);padding-top:1.5rem;
+}
+.pillar{
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--ff-body);font-size:.85rem;font-weight:300;color:rgba(51,51,51,.6);
+  padding:.5rem 0;border-bottom:1px solid rgba(51,51,51,.06);
+  transition:color .2s,padding-left .2s;cursor:none;
+}
+.pillar:hover{color:var(--ink);padding-left:.5rem}
+.pillar-n{font-family:var(--ff-head);font-size:1.6rem;font-weight:900;color:rgba(51,51,51,.1);line-height:1;min-width:2rem}
+.pillar:hover .pillar-n{color:var(--rose)}
+.pillar-text strong{font-weight:500;color:var(--ink)}
+
+.story-right{position:relative}
+.story-photo-frame{
+  aspect-ratio:3/4;
+  background:linear-gradient(135deg,#f1e6ec,#f5d0d8);
+  position:relative;overflow:hidden;
+  border:1px solid rgba(51,51,51,.1);
+}
+.story-photo-frame img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.story-photo-ph{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-head);font-style:italic;font-size:1rem;color:rgba(212,165,160,.3);
+}
+.story-float{
+  position:absolute;bottom:-2rem;left:-2rem;
+  background:var(--ink);color:var(--off);
+  padding:1.4rem 1.6rem;
+}
+.story-float .fn{font-family:var(--ff-head);font-size:2rem;font-weight:900;color:var(--rose);line-height:1}
+.story-float .fl{font-family:var(--ff-cond);font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(51,51,51,.35);margin-top:.2rem}
+.story-float2{
+  position:absolute;top:2rem;right:-2rem;
+  background:var(--rose);color:#fff;
+  padding:.8rem 1rem;
+  font-family:var(--ff-cond);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  writing-mode:vertical-rl;
+}
+
+/* ── FEATURES ── */
+#features{
+  padding:6rem 5%;
+  background:var(--ink2);
+  position:relative;
+}
+.features-headline{
+  text-align:center;margin-bottom:4rem;
+}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;border:1px solid rgba(212,165,160,.08);
+}
+.feat{
+  padding:2.5rem 2rem;
+  border-right:1px solid rgba(212,165,160,.08);
+  transition:background .3s;
+  cursor:none;
+}
+.feat:last-child{border-right:none}
+.feat:hover{background:rgba(212,165,160,.1)}
+.feat-icon{
+  width:42px;height:42px;
+  border:1px solid rgba(212,165,160,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;margin-bottom:1.5rem;
+}
+.feat-title{
+  font-family:var(--ff-head);font-size:1.1rem;font-style:italic;font-weight:400;
+  color:var(--off);margin-bottom:.7rem;
+}
+.feat-desc{
+  font-family:var(--ff-body);font-weight:300;font-size:.82rem;
+  color:rgba(51,51,51,.4);line-height:1.8;
+}
+
+/* ── TESTIMONIALS ── */
+#testimonials{
+  padding:6rem 5%;
+  background:var(--ink);
+}
+.testi-layout{
+  display:grid;grid-template-columns:260px 1fr;
+  gap:4rem;align-items:start;
+}
+.testi-left{
+  position:sticky;top:6rem;
+}
+.testi-left-count{
+  font-family:var(--ff-head);font-size:4rem;font-weight:900;
+  color:rgba(212,165,160,.15);line-height:1;margin-bottom:-.5rem;
+}
+.testi-right{
+  display:flex;flex-direction:column;gap:2px;
+}
+.tc{
+  padding:2rem 2.2rem;
+  background:rgba(212,165,160,.04);
+  border:1px solid rgba(212,165,160,.06);
+  transition:border-color .25s,background .25s;
+  cursor:none;
+}
+.tc:hover{border-color:rgba(212,165,160,.18);background:rgba(212,165,160,.07)}
+.tc-stars{display:flex;gap:3px;margin-bottom:.8rem}
+.ts{width:8px;height:8px;background:var(--rose);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.tc-quote{
+  font-family:var(--ff-head);font-style:italic;font-size:.98rem;font-weight:400;
+  color:rgba(51,51,51,.75);line-height:1.75;margin-bottom:1rem;
+}
+.tc-author{display:flex;align-items:center;gap:.8rem}
+.tc-av{
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(212,165,160,.15);border:1px solid rgba(212,165,160,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:600;color:var(--rose);
+  flex-shrink:0;
+}
+.tc-name{font-family:var(--ff-cond);font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--off)}
+.tc-city{font-family:var(--ff-cond);font-size:.68rem;font-weight:300;letter-spacing:.06em;color:rgba(51,51,51,.3)}
+
+/* ── OFFER / CTA ── */
+#offer{
+  position:relative;
+  background:var(--paper);
+  color:var(--ink);
+  overflow:hidden;
+}
+.offer-split{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
+.offer-left{
+  padding:5rem 5%;
+  position:relative;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--ink2);
+  color:var(--off);
+}
+.offer-left-dec{
+  position:absolute;right:0;top:50%;transform:translateY(-50%);
+  font-family:var(--ff-head);font-size:20rem;font-weight:900;font-style:italic;
+  color:rgba(212,165,160,.04);line-height:1;pointer-events:none;user-select:none;
+}
+.offer-price-row{
+  display:flex;align-items:baseline;gap:1rem;margin:1.2rem 0;flex-wrap:wrap;
+}
+.offer-price-now{
+  font-family:var(--ff-head);font-size:4.5rem;font-weight:900;color:var(--rose);line-height:1;
+}
+.offer-price-was{
+  font-family:var(--ff-cond);font-size:.85rem;letter-spacing:.08em;
+  color:rgba(51,51,51,.25);text-decoration:line-through;
+}
+.offer-save{
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--rose);color:#fff;padding:.3rem .85rem;border-radius:1px;
+}
+.offer-cta{
+  font-family:var(--ff-cond);font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--rose);color:#fff;
+  padding:1rem 2.4rem;border-radius:2px;border:none;cursor:none;text-decoration:none;
+  display:inline-block;align-self:flex-start;margin-top:.5rem;
+  transition:all .25s var(--ease);
+}
+.offer-cta:hover{background:var(--gold);transform:translateY(-2px)}
+.offer-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.ochip{
+  font-family:var(--ff-cond);font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(51,51,51,.4);border:1px solid rgba(212,165,160,.1);
+  padding:.25rem .75rem;border-radius:1px;
+}
+
+.offer-right{
+  padding:5rem 5%;
+  background:var(--warm);
+  display:flex;flex-direction:column;justify-content:center;gap:1.5rem;
+}
+.offer-right-title{
+  font-family:var(--ff-cond);font-size:.68rem;font-weight:400;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:.3rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.offer-right-title::before{content:'';width:18px;height:1px;background:var(--copper)}
+.offer-bonus-h{
+  font-family:var(--ff-head);font-size:1.6rem;font-weight:700;color:var(--ink);line-height:1.15;
+}
+.offer-bonus-h em{font-style:italic;color:var(--rose)}
+.bonus-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(51,51,51,.1)}
+.bonus-item{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(51,51,51,.08);
+  transition:padding-left .2s,opacity .2s;cursor:none;
+}
+.bonus-item:hover{padding-left:.5rem;opacity:.85}
+.bonus-n{
+  font-family:var(--ff-head);font-size:1.8rem;font-weight:900;color:rgba(51,51,51,.08);
+  line-height:1;min-width:2rem;transition:color .2s;
+}
+.bonus-item:hover .bonus-n{color:var(--rose)}
+.bonus-title{font-family:var(--ff-body);font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.bonus-desc{font-family:var(--ff-body);font-size:.78rem;font-weight:300;color:rgba(51,51,51,.5);line-height:1.6}
+.bonus-tag{
+  margin-left:auto;font-family:var(--ff-cond);font-size:.68rem;font-weight:600;letter-spacing:.08em;
+  color:var(--rose);white-space:nowrap;
+}
+
+/* ── URGENCY ── */
+#urgency{
+  padding:4rem 5%;
+  background:var(--ink2);
+  border-top:1px solid rgba(212,165,160,.08);
+}
+.urgency-inner{
+  display:grid;grid-template-columns:1fr auto;
+  gap:3rem;align-items:center;flex-wrap:wrap;
+}
+.urgency-text h3{
+  font-family:var(--ff-head);font-size:1.6rem;font-weight:700;
+  color:var(--off);margin-bottom:.4rem;
+}
+.urgency-text h3 em{font-style:italic;color:var(--rose)}
+.urgency-text p{
+  font-family:var(--ff-body);font-size:.85rem;font-weight:300;
+  color:rgba(51,51,51,.4);
+}
+.stock-row{display:flex;align-items:center;gap:1.2rem;margin-top:1rem;flex-wrap:wrap}
+.stock-bar-wrap{flex:1;min-width:200px;max-width:300px}
+.stock-bar-bg{height:3px;background:rgba(51,51,51,.08);border-radius:99px;overflow:hidden}
+.stock-fill{height:100%;background:linear-gradient(to right,var(--gold2),var(--rose));width:0;transition:width 2s .5s var(--ease);border-radius:99px}
+.stock-label{font-family:var(--ff-cond);font-size:.65rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(212,165,160,.5);margin-top:.4rem}
+.stock-label b{color:var(--rose)}
+
+.cd-row{display:flex;align-items:center;gap:.5rem}
+.cd-box{
+  text-align:center;
+  background:rgba(212,165,160,.06);border:1px solid rgba(212,165,160,.1);
+  padding:.8rem 1.2rem;min-width:68px;
+}
+.cd-num{font-family:var(--ff-head);font-size:2.2rem;font-weight:900;color:var(--rose);line-height:1}
+.cd-lbl{font-family:var(--ff-cond);font-size:.55rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(51,51,51,.25);margin-top:.2rem}
+.cd-sep{font-family:var(--ff-head);font-size:1.5rem;color:rgba(212,165,160,.25);line-height:1;margin-bottom:.5rem}
+
+/* ── GUARANTEE ── */
+#guarantee{
+  padding:5rem 5%;
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+}
+.guar-inner{
+  display:grid;grid-template-columns:auto 1fr;
+  gap:3rem;align-items:center;max-width:760px;
+}
+.guar-seal{
+  width:110px;height:110px;border-radius:50%;
+  border:1.5px solid rgba(51,51,51,.15);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex-shrink:0;
+  position:relative;
+}
+.guar-seal::before{
+  content:'';position:absolute;inset:4px;
+  border-radius:50%;border:1px dashed rgba(212,165,160,.25);
+}
+.guar-seal .gn{font-family:var(--ff-head);font-size:2.2rem;font-weight:900;color:var(--rose);line-height:1}
+.guar-seal .gl{font-family:var(--ff-cond);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(51,51,51,.35);text-align:center}
+.guar-text h3{font-family:var(--ff-head);font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.guar-text h3 em{font-style:italic;color:var(--rose)}
+.guar-text p{font-family:var(--ff-body);font-weight:300;font-size:.87rem;color:rgba(51,51,51,.55);line-height:1.85}
+.guar-sig{font-family:var(--ff-head);font-style:italic;font-size:.95rem;color:rgba(51,51,51,.3);margin-top:.8rem;border-top:1px solid rgba(51,51,51,.08);padding-top:.8rem}
+
+/* ── NB ── */
+#nb{
+  padding:3rem 5%;
+  background:var(--ink2);
+  border-top:1px solid rgba(212,165,160,.08);
+}
+.nb-inner{
+  display:grid;grid-template-columns:200px 1fr;
+  gap:3rem;align-items:start;
+}
+.nb-label h3{font-family:var(--ff-head);font-style:italic;font-size:1.1rem;font-weight:400;color:rgba(51,51,51,.35)}
+.nb-label p{font-family:var(--ff-cond);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(51,51,51,.2);margin-top:.3rem}
+.nb-list{list-style:none;counter-reset:nb}
+.nb-list li{
+  counter-increment:nb;display:flex;gap:.8rem;
+  font-family:var(--ff-body);font-size:.8rem;font-weight:300;color:rgba(51,51,51,.3);line-height:1.7;
+  padding:.65rem 0;border-bottom:1px solid rgba(51,51,51,.05);
+  transition:color .2s;
+}
+.nb-list li:last-child{border-bottom:none}
+.nb-list li:hover{color:rgba(51,51,51,.5)}
+.nb-list li::before{content:counter(nb);font-family:var(--ff-cond);font-size:.78rem;color:rgba(212,165,160,.25);flex-shrink:0;padding-top:.05rem}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink2);
+  padding:2rem 5%;
+  border-top:1px solid rgba(212,165,160,.08);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.foot-logo{
+  font-family:var(--ff-head);font-size:1rem;font-weight:700;font-style:italic;
+  color:rgba(51,51,51,.2);text-decoration:none;
+}
+.foot-logo em{color:rgba(212,165,160,.35)}
+footer small{font-family:var(--ff-cond);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(51,51,51,.12)}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv-left{opacity:0;transform:translateX(-22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv-left.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  body{cursor:auto}
+  #cursor,#cursor-ring{display:none}
+  .hero-split{grid-template-columns:1fr}
+  .hero-right{min-height:50vh}
+  .hero-stats{position:static;margin-top:1.5rem;flex-direction:row;flex-wrap:wrap}
+  .stat-pill{border-right:1px solid rgba(212,165,160,.15);border-radius:2px}
+  .products-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .prod-tall{grid-row:span 1}
+  .prod-tall .prod-img{min-height:280px}
+  .story-inner{grid-template-columns:1fr}
+  .story-right{display:none}
+  .feat-grid{grid-template-columns:1fr}
+  .feat{border-right:none;border-bottom:1px solid rgba(212,165,160,.08)}
+  .testi-layout{grid-template-columns:1fr}
+  .testi-left{position:static}
+  .offer-split{grid-template-columns:1fr}
+  .urgency-inner{grid-template-columns:1fr}
+  .guar-inner{grid-template-columns:1fr;text-align:center}
+  .guar-seal{margin:0 auto}
+  .nb-inner{grid-template-columns:1fr}
+  .nav-links a:not(.nav-cta){display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo"><em>Eclaire</em></a>
+  <div class="nav-links">
+    <a href="#products">Koleksi</a>
+    <a href="#story">Tentang Kami</a>
+    <a href="#testimonials">Ulasan</a>
+    <a href="#offer" class="nav-cta">Pesan Sekarang</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-split">
+    <div class="hero-left">
+      <div class="hero-left-pattern"></div>
+      <div class="hero-left-num">Koleksi 2026 <span style="width:40px;height:1px;background:rgba(200,169,106,.15);display:inline-block;vertical-align:middle;margin-left:.5rem"></span></div>
+      <div class="hero-label">Fashion Premium Wanita</div>
+      <h1 class="hero-h1">
+        Gaya yang<em>Bicara</em>
+        <span>Tanpa Satu Kata Pun</span>
+      </h1>
+      <p class="hero-desc">Pakaian, tas, dan aksesori — dirancang untuk wanita Indonesia yang tahu apa yang ia inginkan. Setiap pilihan, setiap detail, mencerminkan siapa dirimu.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Lihat Koleksi</a>
+        <a href="#story" class="btn-ghost">Tentang Eclaire</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="v">8K+</span><span class="l">Wanita Percaya</span></div>
+        <div class="stat-pill"><span class="v">4.9★</span><span class="l">Rating Verified</span></div>
+        <div class="stat-pill"><span class="v">40+</span><span class="l">Koleksi Gaya</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-img">
+        <img src="" alt="Koleksi Eclaire" onerror="this.style.display='none'">
+      </div>
+      <div class="hero-right-overlay"></div>
+      <div class="hero-right-label">Fashion · Wanita · Premium</div>
+      <div class="hero-price-tag">
+        <div>
+          <div class="price-was">Harga Normal Rp 385.000</div>
+          <div class="price-now-big">Rp 219.000</div>
+        </div>
+        <div class="price-badge">Hemat 43%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-belt">
+    <div class="mseg">Fashion Premium<span class="mdot">◆</span>Pakaian Wanita<span class="mdot">◆</span>Tas Eksklusif<span class="mdot">◆</span>Aksesori Pilihan<span class="mdot">◆</span>Bahan Premium<span class="mdot">◆</span>Garansi 14 Hari<span class="mdot">◆</span>Kirim 1×24 Jam<span class="mdot">◆</span>Free Ongkir<span class="mdot">◆</span>COD Tersedia<span class="mdot">◆</span>8.000+ Pelanggan<span class="mdot">◆</span>Produk Lokal Indonesia<span class="mdot">◆</span></div>
+    <div class="mseg">Fashion Premium<span class="mdot">◆</span>Pakaian Wanita<span class="mdot">◆</span>Tas Eksklusif<span class="mdot">◆</span>Aksesori Pilihan<span class="mdot">◆</span>Bahan Premium<span class="mdot">◆</span>Garansi 14 Hari<span class="mdot">◆</span>Kirim 1×24 Jam<span class="mdot">◆</span>Free Ongkir<span class="mdot">◆</span>COD Tersedia<span class="mdot">◆</span>8.000+ Pelanggan<span class="mdot">◆</span>Produk Lokal Indonesia<span class="mdot">◆</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="sec-head rv">
+    <div>
+      <div class="sec-eyebrow">Koleksi Pilihan</div>
+      <h2 class="sec-title">Untuk Setiap<br><em>Versi Dirimu</em></h2>
+    </div>
+    <p class="sec-desc">Pakaian, tas, dan aksesori — semua dalam satu tempat. Dipilih dengan teliti untuk melengkapi wanita Indonesia yang dinamis.</p>
+  </div>
+  <div class="products-grid rv">
+    <div class="prod prod-tall">
+      <div class="prod-img">
+        <img src="https://i.pinimg.com/736x/16/7c/0a/167c0afcb08b05dad4fb7604dcfb4162.jpg" alt="Dress koleksi utama" onerror="this.style.display='none'">
+        <div class="prod-placeholder">Foto Dress Utama</div>
+      </div>
+      <div class="prod-overlay"></div>
+      <div class="prod-tag">Terlaris</div>
+      <div class="prod-info">
+        <div class="prod-cat">Pakaian · Dress</div>
+        <div class="prod-name">Signature Evening Dress — Silhouette Collection</div>
+        <div class="prod-price">Mulai <b>Rp 219.000</b></div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img" style="min-height:260px">
+        <img src="https://i.pinimg.com/1200x/ee/c2/21/eec221e86cf8426654bd6c30bf4f9f97.jpg" alt="Tas tote premium" onerror="this.style.display='none'">
+        <div class="prod-placeholder">Foto Tas Tote</div>
+      </div>
+      <div class="prod-overlay"></div>
+      <div class="prod-info">
+        <div class="prod-cat">Tas · Tote</div>
+        <div class="prod-name">Premium Tote Bag Kulit Asli</div>
+        <div class="prod-price"><b>Rp 259.000</b></div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img" style="min-height:260px">
+        <img src="https://i.pinimg.com/736x/d5/69/a0/d569a0aedcedf0e4c2068c8564dc8836.jpg" alt="Blouse premium" onerror="this.style.display='none'">
+        <div class="prod-placeholder">Foto Blouse</div>
+      </div>
+      <div class="prod-overlay"></div>
+      <div class="prod-tag" style="background:var(--gold);color:var(--ink)">Baru</div>
+      <div class="prod-info">
+        <div class="prod-cat">Pakaian · Blouse</div>
+        <div class="prod-name">Linen Blouse Breathable Daily</div>
+        <div class="prod-price"><b>Rp 185.000</b></div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img" style="min-height:260px">
+        <img src="https://i.pinimg.com/736x/88/d2/fa/88d2fa7697d8b7e42b54fb6aadba83f7.jpg" alt="Tas sling" onerror="this.style.display='none'">
+        <div class="prod-placeholder">Foto Sling Bag</div>
+      </div>
+      <div class="prod-overlay"></div>
+      <div class="prod-info">
+        <div class="prod-cat">Tas · Sling</div>
+        <div class="prod-name">Mini Sling Bag Chain Detail</div>
+        <div class="prod-price"><b>Rp 195.000</b></div>
+      </div>
+    </div>
+    <div class="prod">
+      <div class="prod-img" style="min-height:260px">
+        <img src="https://i.pinimg.com/736x/c8/b3/35/c8b33564322750ab02225f892e52c40f.jpg" alt="Aksesori" onerror="this.style.display='none'">
+        <div class="prod-placeholder">Foto Aksesori</div>
+      </div>
+      <div class="prod-overlay"></div>
+      <div class="prod-info">
+        <div class="prod-cat">Aksesori</div>
+        <div class="prod-name">Silk Scarf + Hairband Set</div>
+        <div class="prod-price"><b>Rp 125.000</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-pattern"></div>
+  <div class="story-inner">
+    <div class="story-left rv-left">
+      <div class="story-label">Tentang Eclaire</div>
+      <h2 class="story-h">Didesain untuk<br>Wanita yang<br><em>Tahu Dirinya</em></h2>
+      <p class="story-body">Eclaire lahir dari satu keyakinan sederhana: wanita Indonesia berhak atas fashion yang benar-benar memahaminya — bukan sekadar mengikuti tren global yang asing. Setiap potongan dirancang menyesuaikan tubuh dan iklim tropis. Setiap tas dipilih dari bahan yang menemanimu dari pagi ke malam.</p>
+      <div class="story-pillars">
+        <div class="pillar">
+          <div class="pillar-n">01</div>
+          <div class="pillar-text"><strong>Pakaian Premium Anti-kusut</strong> — dari kasual hingga formal, selalu tampil rapi</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-n">02</div>
+          <div class="pillar-text"><strong>Tas & Aksesori Berkelas</strong> — pelengkap yang menyempurnakan penampilanmu</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-n">03</div>
+          <div class="pillar-text"><strong>Bahan Tersertifikasi</strong> — aman untuk semua tipe kulit, termasuk kulit sensitif</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-n">04</div>
+          <div class="pillar-text"><strong>Bangga Produk Lokal</strong> — setiap pembelian mendukung penjahit Indonesia</div>
+        </div>
+      </div>
+    </div>
+    <div class="story-right rv">
+      <div class="story-photo-frame">
+        <img src="https://i.pinimg.com/736x/77/28/2a/77282ac924eeec1dfa93358d9c45d7fd.jpg" alt="Wanita Eclaire" onerror="this.style.display='none'">
+        <div class="story-photo-ph">Foto Kampanye</div>
+      </div>
+      <div class="story-float">
+        <div class="fn">8K+</div>
+        <div class="fl">Wanita Indonesia</div>
+      </div>
+      <div class="story-float2">Koleksi 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-headline rv">
+    <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.7rem">
+      <span style="width:24px;height:1px;background:var(--gold);display:inline-block;vertical-align:middle;margin-right:.8rem"></span>
+      Keunggulan
+    </div>
+    <h2 class="sec-title" style="text-align:center">Standar yang Tak <em>Berkompromi</em></h2>
+  </div>
+  <div class="feat-grid rv">
+    <div class="feat">
+      <div class="feat-icon">✦</div>
+      <div class="feat-title">Bahan Breathable Premium</div>
+      <p class="feat-desc">Kain pilihan yang menyerap keringat optimal. Segar dari pagi hingga malam — cocok untuk iklim tropis Indonesia.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">◆</div>
+      <div class="feat-title">Jahitan Presisi & Tahan Lama</div>
+      <p class="feat-desc">Triple-stitch technique di semua sambungan kritis. Dicuci ratusan kali, kualitasnya tidak pernah berkompromi.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">★</div>
+      <div class="feat-title">Potongan Memuji Tubuh</div>
+      <p class="feat-desc">Dirancang untuk berbagai bentuk tubuh wanita. Setiap potongan jatuh dengan anggun dan penuh kepercayaan diri.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">▲</div>
+      <div class="feat-title">Kirim dalam 1×24 Jam</div>
+      <p class="feat-desc">Stok selalu siap. Pesanan hari ini, paket berangkat besok — ke seluruh penjuru Indonesia tanpa biaya tambahan.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">◉</div>
+      <div class="feat-title">Tas & Aksesori Lengkap</div>
+      <p class="feat-desc">Dari tote bag kulit hingga sling bag kasual — koleksi tas dan aksesori yang melengkapi setiap gaya berpakaianmu.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">♥</div>
+      <div class="feat-title">CS Respons 3 Menit</div>
+      <p class="feat-desc">Tim kami siap membantu dalam rata-rata 3 menit. Pertanyaan gaya, ukuran, stok — semua terjawab cepat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testi-layout">
+    <div class="testi-left rv-left">
+      <div class="testi-left-count">8K</div>
+      <div class="sec-eyebrow" style="margin-bottom:.6rem">Ulasan Nyata</div>
+      <h2 class="sec-title" style="font-size:2rem">Kata<br><em>Mereka</em></h2>
+      <p style="font-family:var(--ff-body);font-weight:300;font-size:.82rem;color:rgba(245,240,234,.35);margin-top:1rem;line-height:1.8">Lebih dari 8.000 ulasan terverifikasi dari wanita seluruh Indonesia.</p>
+    </div>
+    <div class="testi-right rv">
+      <div class="tc">
+        <div class="tc-stars"><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div></div>
+        <p class="tc-quote">Sudah coba banyak brand lokal, tapi Eclaire benar-benar berbeda. Potongan dress-nya sempurna di badan saya — terasa seperti dibuat khusus. Tasnya juga kuat sekali, sudah setahun dipakai tiap hari masih bagus.</p>
+        <div class="tc-author"><div class="tc-av">AR</div><div><div class="tc-name">Annisa Rahmawati</div><div class="tc-city">Jakarta Pusat</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars"><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div></div>
+        <p class="tc-quote">Dua tahun setia dengan Eclaire. Bajunya tidak pernah kusut bahkan dari koper, dan sling bag-nya muat banyak tapi tetap kelihatan elegan. Ini standar yang saya cari.</p>
+        <div class="tc-author"><div class="tc-av">FS</div><div><div class="tc-name">Farah Salsabila</div><div class="tc-city">Yogyakarta</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars"><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div></div>
+        <p class="tc-quote">Repeat order ketiga untuk blouse-nya, dan pertama kali beli tas tote-nya — langsung jatuh cinta. Kualitas tidak pernah menurun, pengiriman selalu tepat waktu.</p>
+        <div class="tc-author"><div class="tc-av">DP</div><div><div class="tc-name">Dinda Pratiwi</div><div class="tc-city">Surabaya</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars"><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div></div>
+        <p class="tc-quote">Warna bajunya tidak pudar walau sudah dicuci berkali-kali. Tasnya pun tidak lecek. Detail kecil yang jarang diperhatikan brand lain tapi sangat terasa bedanya.</p>
+        <div class="tc-author"><div class="tc-av">NZ</div><div><div class="tc-name">Nabila Zahra</div><div class="tc-city">Medan</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-stars"><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div><div class="ts"></div></div>
+        <p class="tc-quote">Awalnya ragu beli online. Sekarang tidak bisa bayangin beli di tempat lain. Garansinya bikin tenang, dan scarf set-nya jadi favorit baru saya.</p>
+        <div class="tc-author"><div class="tc-av">RK</div><div><div class="tc-name">Riana Kusuma</div><div class="tc-city">Makassar</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER / CTA -->
+<section id="offer">
+  <div class="offer-split">
+    <div class="offer-left rv-left">
+      <div class="offer-left-dec">✦</div>
+      <div class="sec-eyebrow" style="position:relative">Penawaran Eksklusif — Hanya Hari Ini</div>
+      <h2 class="sec-title" style="color:var(--off);font-size:clamp(1.8rem,3.5vw,2.8rem);position:relative">Koleksimu<br><em>Menunggumu</em></h2>
+      <div class="offer-price-row">
+        <div>
+          <div class="offer-price-was">Harga Normal Rp 385.000</div>
+          <div class="offer-price-now">Rp 219.000</div>
+        </div>
+        <div class="offer-save">Hemat 43%</div>
+      </div>
+      <a href="https://wa.me/6285187984478?text=Halo+Eclaire+Outfit,+saya+ingin+memesan+produk+fashion+premium" target="_blank" class="offer-cta">Pesan via WhatsApp</a>
+      <div class="offer-chips">
+        <span class="ochip">Fashion Premium</span>
+        <span class="ochip">Tas & Aksesori</span>
+        <span class="ochip">Garansi 14 Hari</span>
+        <span class="ochip">Free Ongkir</span>
+        <span class="ochip">COD Tersedia</span>
+      </div>
+    </div>
+    <div class="offer-right rv">
+      <div>
+        <div class="offer-right-title">Bonus Eksklusif</div>
+        <h3 class="offer-bonus-h">4 Hadiah <em>Gratis</em><br>Menyertai Pesananmu</h3>
+      </div>
+      <div class="bonus-list">
+        <div class="bonus-item">
+          <div class="bonus-n">01</div>
+          <div>
+            <div class="bonus-title">Dust Bag Premium Suede</div>
+            <div class="bonus-desc">Kantong penyimpanan suede untuk pakaian dan tas, melindungi dari debu dan kelembapan.</div>
+          </div>
+          <div class="bonus-tag">~Rp 95K</div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-n">02</div>
+          <div>
+            <div class="bonus-title">Panduan Perawatan Fashion</div>
+            <div class="bonus-desc">Cara merawat pakaian dan tas agar tetap prima dan tahan lama.</div>
+          </div>
+          <div class="bonus-tag">~Rp 45K</div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-n">03</div>
+          <div>
+            <div class="bonus-title">Kartu Member Eclaire</div>
+            <div class="bonus-desc">Akses early access koleksi baru dan diskon eksklusif member.</div>
+          </div>
+          <div class="bonus-tag">~Rp 60K</div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-n">04</div>
+          <div>
+            <div class="bonus-title">Gift Packaging Cantik</div>
+            <div class="bonus-desc">Kemasan siap hadiahkan — sempurna sebagai kado spesial.</div>
+          </div>
+          <div class="bonus-tag">~Rp 80K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section id="urgency">
+  <div class="urgency-inner rv">
+    <div class="urgency-text">
+      <h3>Stok Hampir Habis. <em>Jangan Tunda.</em></h3>
+      <p>Dari 200 unit periode ini, hanya tersisa sedikit dengan harga spesial.</p>
+      <div class="stock-row">
+        <div class="stock-bar-wrap">
+          <div class="stock-bar-bg"><div class="stock-fill" id="stockFill"></div></div>
+          <div class="stock-label">Tersisa <b id="stockNum">38 unit</b> dari 200</div>
+        </div>
+        <a href="https://wa.me/6285187984478?text=Halo+Eclaire+Outfit,+saya+ingin+memesan" target="_blank" class="btn-primary" style="white-space:nowrap;cursor:pointer">Klaim Harga Spesial</a>
+      </div>
+    </div>
+    <div class="cd-row">
+      <div class="cd-box"><div class="cd-num" id="cdH">08</div><div class="cd-lbl">Jam</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cd-num" id="cdM">45</div><div class="cd-lbl">Menit</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cd-num" id="cdS">00</div><div class="cd-lbl">Detik</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee">
+  <div class="guar-inner rv">
+    <div class="guar-seal">
+      <div class="gn">14</div>
+      <div class="gl">Hari<br>Garansi</div>
+    </div>
+    <div class="guar-text">
+      <h3>Garansi <em>Uang Kembali</em> Penuh</h3>
+      <p>Jika dalam <strong>14 hari setelah produk tiba</strong> kualitasnya tidak sesuai — mulai dari bahan, jahitan, hingga produk apapun yang bermasalah akibat proses produksi — kami mengembalikan <strong>seluruh uangmu tanpa potongan</strong>. Tidak perlu penjelasan panjang. Tidak ada formulir berbelit.</p>
+      <div class="guar-sig">— Tim Eclaire Outfit Studio</div>
+    </div>
+  </div>
+</section>
+
+<!-- NB -->
+<section id="nb">
+  <div class="nb-inner rv">
+    <div class="nb-label">
+      <h3>Catatan Penting</h3>
+      <p>Mohon dibaca</p>
+    </div>
+    <ul class="nb-list">
+      <li>Harga spesial Rp 219.000 hanya berlaku selama periode promo dan stok masih tersedia.</li>
+      <li>Stok terbatas — pemesanan berdasarkan urutan konfirmasi pembayaran.</li>
+      <li>Pengiriman Senin–Sabtu, tidak termasuk hari libur nasional.</li>
+      <li>Garansi 14 hari berlaku untuk kerusakan proses produksi, bukan pemakaian tidak sesuai petunjuk.</li>
+      <li>Klaim garansi disertai foto produk dan bukti pembelian via WhatsApp CS resmi.</li>
+      <li>Bonus bergantung ketersediaan stok; jika habis, digantikan bonus nilai setara.</li>
+      <li>Eclaire tidak bertanggung jawab atas keterlambatan akibat kondisi di luar kendali.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="foot-logo"><em>Eclaire</em> Outfit Studio</a>
+  <small>&copy; 2026 Eclaire Outfit — Produk UMKM Lokal Indonesia</small>
+</footer>
+
+<script>
+(function(){
+  const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+  if(!cur||!ring)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'},{passive:true});
+  function anim(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(anim)}
+  anim();
+  document.querySelectorAll('a,button,[class*="btn"],[class*="prod"],[class*="feat"],[class*="tc"],[class*="pillar"],[class*="bonus-item"],[class*="nb-list"] li').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(200,169,106,.6)'});
+    el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(200,169,106,.4)'});
+  });
+})();
+
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('filled',scrollY>60)},{passive:true});
+
+const rvEls=document.querySelectorAll('.rv,.rv-left');
+const io=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*70);io.unobserve(e.target)}})},{threshold:.1});
+rvEls.forEach(el=>io.observe(el));
+
+(function(){
+  let end=sessionStorage.getItem('ecl2_end');
+  const now=Date.now();
+  if(!end||+end<now){end=now+(8*3600+45*60)*1000;try{sessionStorage.setItem('ecl2_end',end)}catch(e){}}
+  function tick(){
+    const rem=Math.max(0,+end-Date.now());
+    const h=Math.floor(rem/3600000),m=Math.floor((rem%3600000)/60000),s=Math.floor((rem%60000)/1000);
+    document.getElementById('cdH').textContent=String(h).padStart(2,'0');
+    document.getElementById('cdM').textContent=String(m).padStart(2,'0');
+    document.getElementById('cdS').textContent=String(s).padStart(2,'0');
+  }
+  tick();setInterval(tick,1000);
+})();
+
+setTimeout(()=>{const b=document.getElementById('stockFill');if(b)b.style.width='81%'},700);
+</script>
+</body>
+</html>
